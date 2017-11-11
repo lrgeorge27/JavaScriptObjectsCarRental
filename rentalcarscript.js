@@ -2,9 +2,9 @@ var cars = {
 name: "Enterprise Car Rental", 
 types: ['economy', 'midsize'],
 economy: 80,
-econBooked: 0,
+//econBooked: 0,
 midsize: 150,
-midBooked: 0,
+//midBooked: 0,
 }
 
 window.onload = function() {
@@ -12,18 +12,20 @@ window.onload = function() {
 }
 
 function econAvail() {
-    cars.econBooked++;
-    document.getElementById("econAvail").innerHTML = cars.economy - cars.econBooked;
+    //cars.econBooked++;
+    cars.economy--;
+    document.getElementById("econAvail").innerHTML = cars.economy; //- cars.econBooked;
 }
 
 function midAvail() {
-    cars.midBooked++;
-    document.getElementById("midAvail").innerHTML = cars.midsize - cars.midBooked;
+    //cars.midBooked++;
+    cars.midsize--;
+    document.getElementById("midAvail").innerHTML = cars.midsize; // - cars.midBooked;
 }
 
 function getCars() {
   document.getElementById("econCars").innerHTML  = cars.types[0];
   document.getElementById("midCars").innerHTML = cars.types[1];
-  document.getElementById("econAvail").innerHTML = cars.economy - cars.econBooked;
-  document.getElementById("midAvail").innerHTML = cars.midsize - cars.midBooked;
+  document.getElementById("econAvail").innerHTML = cars.economy; // - cars.econBooked;
+  document.getElementById("midAvail").innerHTML = cars.midsize //- cars.midBooked;
 }
