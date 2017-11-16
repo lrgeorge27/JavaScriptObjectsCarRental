@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -8,9 +9,11 @@
 	</script>
 	<title>Car Rental</title>
 </head>
+
 <body>
 	<h1>Business Name</h1>
-	<p id="busName"></p><!-- <h2>Economy Cars</h2>
+	<p id="busName"></p>
+	<!-- <h2>Economy Cars</h2>
     <p id="econCars"></p>
     
     <h2>Economy Cars Available</h2>
@@ -21,11 +24,13 @@
     
     <h2>Midsize Cars Available</h2>
     <p id="midAvail"></p>-->
-	<form action="addRenter()" enctype="text/plain" method="post">
-		Rent a Car <!--<div class="row">
+	<form id="renter" action="new Rental()" enctype="text/plain" method="post">
+		Rent a Car
+		<!--<div class="row">
                 <div class="col-sm-2">-->
-		 <label for="name">Name</label> <input id="name" name="name" placeholder="Your name..." type="text"> <!--</div>-->
-		 <label for="car type">Type of car</label> <select name="car type" id="carSelection" onchange="getCars()">
+		<label for="name">Name</label> <input id="name" name="name" placeholder="Your name..." type="text">
+		<!--</div>-->
+		<label for="car type">Type of car</label> <select name="car type" id="carSelection" onchange="getCars()">
 			<option selected value="blank">
 				Select Type
 			</option>
@@ -48,10 +53,11 @@
 	<p id="econAvail"></p>
 	<p id="midAvail"></p>
 	<p id="luxAvail"></p>
-	
-	<button id="rent" onclick="addRenter()">Rent a Car</button>
-    <!--<button id="midRent">Rent out 1 Midsize car</button>
+
+	<button id="rent" onclick="new Rental()">Rent a Car</button>
+	<!--<button id="midRent">Rent out 1 Midsize car</button>
     <button id="econRent" >Rent out 1 Economy car</button>-->
-    
+
 </body>
+
 </html>
