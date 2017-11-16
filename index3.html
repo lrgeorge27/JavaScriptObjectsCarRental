@@ -13,24 +13,8 @@
 <body>
 	<h1>Business Name</h1>
 	<p id="busName"></p>
-	<!-- <h2>Economy Cars</h2>
-    <p id="econCars"></p>
-    
-    <h2>Economy Cars Available</h2>
-    <p id="econAvail"></p>
-    
-    <h2>Midsize Cars</h2>
-    <p id="midCars"></p>
-    
-    <h2>Midsize Cars Available</h2>
-    <p id="midAvail"></p>-->
-	<form id="renter" action="new Rental()" enctype="text/plain" method="post">
-		Rent a Car
-		<!--<div class="row">
-                <div class="col-sm-2">-->
-		<label for="name">Name</label> <input id="name" name="name" placeholder="Your name..." type="text">
-		<!--</div>-->
-		<label for="car type">Type of car</label> <select name="car type" id="carSelection" onchange="getCars()">
+	<form action="new%20Rental()" enctype="text/plain" id="renter" method="post" name="renter">
+		Rent a Car <label for="name">Name</label> <input id="name" name="name" placeholder="Your name..." required="" type="text"> <label for="car type">Type of car</label> <select id="carSelection" name="car type" onchange="getCars()" required="">
 			<option selected value="blank">
 				Select Type
 			</option>
@@ -52,12 +36,7 @@
 	<h1>Available:</h1>
 	<p id="econAvail"></p>
 	<p id="midAvail"></p>
-	<p id="luxAvail"></p>
-
-	<button id="rent" onclick="new Rental()">Rent a Car</button>
-	<!--<button id="midRent">Rent out 1 Midsize car</button>
-    <button id="econRent" >Rent out 1 Economy car</button>-->
-
+	<p id="luxAvail"></p><button id="rent" onclick="new Rental()">Rent a Car</button>
 </body>
 
 </html>
