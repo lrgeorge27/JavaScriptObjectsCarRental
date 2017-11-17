@@ -10,11 +10,19 @@ var cars = {
     priceMid: "$100",
     priceLux: "$120"
 };
-var Rental = function(name, selection) {
-    this.name = name,
-        this.car = selection;
+
+var rental = {
+    economy: [],
+    midsize: [],
+    luxury: []
 };
-var renter = new Rental(document.getElementById("name"), document.getElementById("carSelection"));
+
+// var Rental = function(name, selection) {
+//     this.name = name,
+//         this.car = selection;
+// };
+// var renter = new Rental(document.getElementById("name"), document.getElementById("carSelection"));
+
 window.onload = function() {
     document.getElementById("busName").innerHTML = cars.name;
 };
@@ -39,14 +47,27 @@ function getCars() {
             break;
     }
 }
-// function addRenter(renterName, selection) {
-//     var selection = document.getElementsByTagId("carSelection");
-//     var renterName = document.getElementById("name");
-//     var rental = document.getElementsByTagName("form");
+
+function addRenter() {
+    var selection = document.forms["renter"]["carSelection"].value;
+    var renter = document.forms["renter"]["name"].value;
+    if (selection == "blank") {
+        alert("Please select type");
+    }
+    else if (renter == "") {
+        alert("Please enter name");
+    }
+    else {
+        rental[selection].push({ name: renter });
+        document.getElementById("display").innerHTML = "Thank you for your reservation!";
+    }
+    return false;
+}
+
+//var rental = document.getElementsByTagName("form");
 //         rental.push({
 //             name: renterName,
 //             car: selection
 //         });
 //     }
 //}
-console.log(new Rental());
