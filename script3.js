@@ -2,27 +2,22 @@ var cars = {
     name: "Enterprise Car Rental",
     types: ['economy', 'midsize'],
     economy: 80,
-    //econBooked: 0,
     midsize: 150,
-    //midBooked: 0,
     luxury: 45,
     priceEcon: '$80',
     priceMid: "$100",
     priceLux: "$120"
 };
-
 var rental = {
     economy: [],
     midsize: [],
     luxury: []
 };
-
 // var Rental = function(name, selection) {
 //     this.name = name,
 //         this.car = selection;
 // };
 // var renter = new Rental(document.getElementById("name"), document.getElementById("carSelection"));
-
 window.onload = function() {
     document.getElementById("busName").innerHTML = cars.name;
 };
@@ -58,16 +53,11 @@ function addRenter() {
         alert("Please enter name");
     }
     else {
-        rental[selection].push({ name: renter });
+        rental[selection].push({
+            name: renter
+        });
+        cars.
         document.getElementById("display").innerHTML = "Thank you for your reservation!";
     }
     return false;
 }
-
-//var rental = document.getElementsByTagName("form");
-//         rental.push({
-//             name: renterName,
-//             car: selection
-//         });
-//     }
-//}
