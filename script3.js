@@ -18,6 +18,7 @@ var rental = {
 //         this.car = selection;
 // };
 // var renter = new Rental(document.getElementById("name"), document.getElementById("carSelection"));
+
 window.onload = function() {
     document.getElementById("busName").innerHTML = cars.name;
 };
@@ -48,16 +49,18 @@ function addRenter() {
     var renter = document.forms["renter"]["name"].value;
     if (selection == "blank") {
         alert("Please select type");
+        console.log(selection);
     }
     else if (renter == "") {
         alert("Please enter name");
+        console.log(renter);
     }
     else {
         rental[selection].push({
             name: renter
         });
-        cars.
         document.getElementById("display").innerHTML = "Thank you for your reservation!";
+        console.log(rental);
     }
     return false;
 }
