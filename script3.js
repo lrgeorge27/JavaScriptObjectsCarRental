@@ -1,9 +1,9 @@
 var cars = {
     name: "Enterprise Car Rental",
     types: ['economy', 'midsize'],
-    economy: 80,
-    midsize: 150,
-    luxury: 45,
+    economy: 15,
+    midsize: 10,
+    luxury: 5,
     priceEcon: '$80',
     priceMid: "$100",
     priceLux: "$120"
@@ -47,7 +47,24 @@ function getCars() {
 function addRenter() {
     var selection = document.forms["renter"]["carSelection"].value;
     var renter = document.forms["renter"]["name"].value;
-    if (selection == "blank") {
+    var economy = cars.economy;
+    var midsize = cars.midsize;
+    var luxury = cars.luxury;
+
+    if (economy <= 0) {
+        alert("That selection is not available. Please make a different selection");
+        console.log(economy);
+    }
+
+    else if (midsize <= 0) {
+        alert("That selection is not available. Please make a different selection");
+        console.log(economy);
+    }
+    else if (luxury <= 0) {
+        alert("That selection is not available. Please make a different selection");
+        console.log(economy);
+    }
+    else if (selection == "blank") {
         alert("Please select type");
         console.log(selection);
     }
