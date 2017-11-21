@@ -1,27 +1,43 @@
 var cars = {
     name: "Enterprise Car Rental",
-    types: ['economy', 'midsize'],
-    economy: 3,
-    midsize: 10,
-    luxury: 5,
-    priceEcon: '$80',
-    priceMid: "$100",
-    priceLux: "$120"
+    types: [{
+            name: 'economy',
+            economy: 3,
+            priceEcon: '$80'
+        },
+        {
+            name: 'midsize',
+            midsize: 10,
+            priceMid: "$100",
+        },
+        {
+            name: 'luxury',
+            luxury: 5,
+            priceLux: "$120"
+        }
+    ]
 };
 var rental = {
     economy: [],
     midsize: [],
     luxury: []
 };
-// var Rental = function(name, selection) {
-//     this.name = name,
-//         this.car = selection;
-// };
-// var renter = new Rental(document.getElementById("name"), document.getElementById("carSelection"));
 
 window.onload = function() {
     document.getElementById("busName").innerHTML = cars.name;
 };
+
+//var selection = document.createElement('SELECT');
+for (var i = 0; i < cars.types.length; i++) {
+    console.log("start");
+    var car = document.createElement('OPTION');
+    car.setAttribute("id", "select" + [i]);
+    car.setAttribute("value", "car" + [i]);
+    console.log("stop");
+    //document.getElementById("select").innerHTML = cars.types[i].name;
+    //document.getElementById("carSelection").appendChild(car);
+}
+//console.log(document.getElementById("option").nodeName);
 
 function getCars() {
     var car = document.getElementById("carSelection").value;
