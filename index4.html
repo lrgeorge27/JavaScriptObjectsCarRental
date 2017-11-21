@@ -6,8 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <!--<script src="script3.js" type="text/javascript"></script>-->
-    <script src="script4.js" type="text/javascript">
-    </script>
+
     <title>Car Rental</title>
 </head>
 
@@ -16,30 +15,16 @@
     <p id="busName"></p>
     <form enctype="text/plain" id="renter" method="post" name="renter">
         Rent a Car <label for="name">Name</label> <input id="name" name="name" placeholder="Your name..." required="" type="text"> <label for="car type">Type of car</label>
-        <select id="carSelection" name="carSelection" onchange="getCars()" required="">
-<!--<option selected value="blank">-->
-<!--	Select Type-->
-<!--</option>-->
-<!--<option id="selectEcon" value="economy">-->
-<!--	Economy car-->
-<!--</option>-->
-<!--<option id="selectMid" value="midsize">-->
-<!--	Midsize car-->
-<!--</option>-->
-<!--<option id="selectLux" value="luxury">-->
-<!--	Luxury car-->
-<!--</option>-->
-					</select>
+        <select id="carSelection" name="carSelection" onchange="displayDetails()" required=""></select>
     </form>
     <h1>Price:</h1>
-    <p id="econ"></p>
-    <p id="mid"></p>
-    <p id="lux"></p>
+    <p id="price"></p>
     <h1>Available:</h1>
-    <p id="econAvail"></p>
-    <p id="midAvail"></p>
-    <p id="luxAvail"></p><button onclick="addRenter()" type="submit" value="submit">Rent a Car</button>
+    <p id="available"></p>
+    <button onclick="addRenter()" type="submit" value="submit">Rent a Car</button>
     <p id="display"></p>
+    <script src="script4.js" type="text/javascript">
+    </script>
 </body>
 
 </html>
