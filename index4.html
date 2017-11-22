@@ -11,13 +11,13 @@
 </head>
 
 <body>
-    <h1>Business Name</h1>
-    <p id="busName"></p>
+    <h1 id="busName">Business Name</h1>
+    <!--<p id="busName"></p>-->
     <form enctype="text/plain" id="renter" method="post" name="renter">
         Rent a Car <label for="name">Name</label> <input id="name" name="name" placeholder="Your name..." required="" type="text"> <label for="car type">Type of car</label>
         <select id="carSelection" name="carSelection" onchange="displayDetails()" required=""></select>
     </form>
-    <h1>Price:</h1>
+    <h1>Price per day:</h1>
     <p id="price"></p>
     <h1>Available:</h1>
     <p id="available"></p>

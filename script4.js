@@ -1,7 +1,7 @@
 var cars = {
     types: [{
             name: 'economy',
-            available: 3,
+            available: 5,
             price: '$80'
         },
         {
@@ -11,17 +11,18 @@ var cars = {
         },
         {
             name: 'luxury',
+            available: 3,
+            price: "$150"
+        },
+        {
+            name: 'SUV',
             available: 5,
             price: "$120"
         }
     ],
     name: "Lauren's Rent - A - Car",
 };
-var rental = {
-    economy: [],
-    midsize: [],
-    luxury: []
-};
+var rental = [];
 
 window.onload = function() {
     document.getElementById("busName").innerHTML = cars.name;
@@ -70,35 +71,13 @@ function addRenter() {
         console.log(renter);
     }
     else {
-        rental[selection].push({
-            name: renter
+        rental.push({
+            name: renter,
+            car: selection
         });
-        document.getElementById("display").innerHTML = "Thank you for your reservation." //ing a" + cars.types[parseInt("carSelection")].name + ".";
+        //document.getElementById("display").innerHTML = "Thank you for your reserving a" + cars.types[parseInt("carSelection")].name + ".";
+        alert("Thank you for your reservation!");
         console.log(rental);
     }
     return false;
 }
-
-
-
-//     // var economy = cars.economy;
-//     // var midsize = cars.midsize;
-//     // var luxury = cars.luxury;
-
-//     if (economy <= 0) {
-//         alert("That selection is not available. Please make a different selection");
-//         console.log(economy);
-//     }
-
-//     else if (midsize <= 0) {
-//         alert("That selection is not available. Please make a different selection");
-//         console.log(midsize);
-//     }
-//     else if (luxury <= 0) {
-//         alert("That selection is not available. Please make a different selection");
-//         console.log(luxury);
-//     }
-//     else if (renter == "") {
-//         alert("Please enter name");
-//         console.log(renter);
-//     }
