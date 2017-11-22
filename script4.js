@@ -27,6 +27,16 @@ window.onload = function() {
     document.getElementById("busName").innerHTML = cars.name;
 };
 
+function displayDetails() {
+    console.log("hello");
+    // console.log(i);
+    var n = [parseInt(document.getElementById("carSelection").value)]; //take what value gives and turn into integer
+    cars.types[n].available--;
+    document.getElementById("price").innerHTML = cars.types[n].price;
+    document.getElementById("available").innerHTML = cars.types[n].available;
+
+}
+
 var selection = document.getElementById('carSelection');
 for (var i = 0; i < cars.types.length; i++) {
     console.log("start");
@@ -38,41 +48,42 @@ for (var i = 0; i < cars.types.length; i++) {
     selection.appendChild(car);
 }
 
-function displayDetails(i) {
-    console.log("hello");
-    console.log(i);
-    document.getElementById("price").innerHTML = cars.types[i].price;
-    document.getElementById("available").innerHTML = cars.types[i].available;
 
+function addRenter() {
+    //document.getElementById("renter").onsubmit = function() 
+    var n = [parseInt(document.getElementById("carSelection").value)]; //take what value gives and turn into integer
+    var avail = cars.types[n].available;
+    var selection = cars.types[n].name //document.forms["renter"]["carSelection"].value;
+    var renter = document.forms["renter"]["name"].value;
+
+    if (avail <= 0) {
+        alert("That selection is unavailable. Please make a new selection.");
+        console.log(avail);
+    }
+    else if (selection == "") {
+        alert("Please make a selection.");
+        console.log(selection);
+    }
+
+    else if (renter == "") {
+        alert("Please enter name.");
+        console.log(renter);
+    }
+    else {
+        rental[selection].push({
+            name: renter
+        });
+        document.getElementById("display").innerHTML = "Thank you for your reservation." //ing a" + cars.types[parseInt("carSelection")].name + ".";
+        console.log(rental);
+    }
+    return false;
 }
 
-// function getCars() {
-//     var car = document.getElementById("carSelection").value;
-//     switch (car) {
-//         case "economy":
-//             cars.economy--;
-//             document.getElementById("econAvail").innerHTML = "Economy:" + cars.economy;
-//             document.getElementById("econ").innerHTML = "Economy:" + cars.priceEcon;
-//             break;
-//         case "midsize":
-//             cars.midsize--;
-//             document.getElementById("midAvail").innerHTML = "Midsize:" + cars.midsize;
-//             document.getElementById("mid").innerHTML = "Midsize:" + cars.priceMid;
-//             break;
-//         case "luxury":
-//             cars.luxury--;
-//             document.getElementById("luxAvail").innerHTML = "Luxury:" + cars.luxury;
-//             document.getElementById("lux").innerHTML = "Luxury:" + cars.priceLux;
-//             break;
-//     }
-// }
 
-// function addRenter() {
-//     var selection = document.forms["renter"]["carSelection"].value;
-//     var renter = document.forms["renter"]["name"].value;
-//     var economy = cars.economy;
-//     var midsize = cars.midsize;
-//     var luxury = cars.luxury;
+
+//     // var economy = cars.economy;
+//     // var midsize = cars.midsize;
+//     // var luxury = cars.luxury;
 
 //     if (economy <= 0) {
 //         alert("That selection is not available. Please make a different selection");
@@ -87,20 +98,7 @@ function displayDetails(i) {
 //         alert("That selection is not available. Please make a different selection");
 //         console.log(luxury);
 //     }
-//     else if (selection == "blank") {
-//         alert("Please select type");
-//         console.log(selection);
-//     }
 //     else if (renter == "") {
 //         alert("Please enter name");
 //         console.log(renter);
 //     }
-//     else {
-//         rental[selection].push({
-//             name: renter
-//         });
-//         document.getElementById("display").innerHTML = "Thank you for your reservation!";
-//         console.log(rental);
-//     }
-//     return false;
-// }
